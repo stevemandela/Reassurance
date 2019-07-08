@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Nos Reassurance' %}
+
+{% block body %}
+<div class="row">
+	<div id="fond">
+		
+	</div>
+	
+   <style media="screen">
+   #fond {
+    background:url("https://www.moulinroty.com/wp-content/uploads/2019/01/20190115-nouveau-catalogue-1.jpg");
+    background-size: cover;
+    position:relative;
+    width:750%;
+    height:750px;
+    z-index:1;
+   }
+</style>
+</div>
+<div class="container mt-4">
+   <h1>Voir nos reassurances</h1>
+   
+   <div class="row">
+
+      {% for property in properties %}
+
+       <div class="col-md-4">
+         {% include 'property/_property.html.twig' %}
+       </div>
+
+     {% endfor %}
+   </div>
+    <div class="pagination">
+         {{ knp_pagination_render(properties) }}
+    </div>
+ </div>
+{% endblock %}
